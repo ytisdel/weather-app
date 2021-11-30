@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wk 2 Plus Homework</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/8cafa0b164.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app-contain">
+          <div class="search">
+            <form class="row" id="search-form">
+              <div class="col-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search a City"
+                  id="search-text-input"
+                  autocomplete="off"
+                  autofocus="on"
+                />
+              </div>
+              <div class="col">
+                <button
+                  type="submit"
+                  class="btn btn-primary mb-3"
+                  value="search"
+                >
+                  Submit
+                </button>
+
+                <span>
+                  <button
+                    class="btn btn-success mb-3"
+                    class="current"
+                    id="current"
+                  >
+                    Current Location
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
+
+          <br />
+
+          <div class="row">
+            <div class="col" class="float-left" style="width: 200px" ;>
+              <div class="card" style="width: 15rem">
+                <div class="card-body">
+                  <div class="float-left">
+                    <img
+                      src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/021/492/original/pngaaa.com-4870843_%281%29.png?1637599432"
+                      alt="cloudy sun"
+                      class="weather-icon float-left"
+                    />
+                    <span class="temperature" id="temperature"> </span>
+                  </div>
+                  <br />
+
+                  <h6 class="card-subtitle mb-2 text-muted" id="humidity-main">
+                    Humidity:
+                  </h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id="wind-speed">
+                    Wind:
+                  </h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id="air-quality">
+                    Air Quality: Good 👍
+                  </h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" style="width: 200px" ;>
+              <span id="date"><h5></h5></span>
+              <div class="currentCity" id="current-city"><h2></h2></div>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="weather-forecast" id="forecast">
+            <div class="row">
+              <div class="col-2">
+                Sat
+                <div class="temp1">
+                  75°
+                  <br />
+                  🌤
+                </div>
+              </div>
+              <div class="col-2">
+                Sun
+                <div class="temp2">
+                  60°
+                  <br />
+                  <i class="fas fa-cloud-sun-rain"></i>
+                </div>
+              </div>
+              <div class="col-2">
+                Mon
+                <div class="temp3">
+                  82°
+                  <br />
+                  🌞
+                </div>
+              </div>
+              <div class="col-2">
+                Tues
+                <div class="temp4">
+                  75°
+                  <br />
+                  🌤
+                </div>
+              </div>
+              <div class="col-2">
+                Wed
+                <div class="temp5">
+                  70°
+                  <br />
+                  ⛅
+                </div>
+              </div>
+              <div class="col-2">
+                Thu
+                <div class="temp6">
+                  72°
+                  <br />
+                  <i class="far fa-sun"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="src/index.js"></script>
+</html>
