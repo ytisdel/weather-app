@@ -1,0 +1,33 @@
+.container .weather-app-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.container .weather-app-contain {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.h4 {
+  text-align: center;
+}
+
+.currentCity {
+  font-size: 50px;
+}
+
+.weather-forecast {
+  text-align: center;
+}
+
+.units {
+  font-size: 18px;
+}
+
+.temperature {
+  font-size: 30px;
+}
+
+img {
+  block-size: 40px;
+}
