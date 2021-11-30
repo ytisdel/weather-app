@@ -31,3 +31,10 @@
 img {
   block-size: 40px;
 }
+
+.git {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+}
