@@ -12,8 +12,10 @@
   text-align: center;
 }
 
-.currentCity {
+.col .current-city {
   font-size: 50px;
+  margin-top: 40px;
+  margin-bottom: -10px;
 }
 
 .weather-forecast {
@@ -63,4 +65,9 @@ img {
 
 .weather-temperature .units .fahrenheit-sign {
   text-decoration: none;
+}
+
+.weather-attributes .weather-condition {
+  margin-top: 5px;
+  text-transform: capitalize;
 }

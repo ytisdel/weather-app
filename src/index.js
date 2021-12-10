@@ -24,12 +24,14 @@ function showCurrentTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureMain = document.querySelector("#temperature");
   temperatureMain.innerHTML = `${temperature}`;
+  let weatherCond = document.querySelector("#weather-condition");
+  weatherCond.innerHTML = response.data.weather[0].description;
   let humidity = Math.round(response.data.main.humidity);
   let humidityMain = document.querySelector("#humidity-main");
   humidityMain.innerHTML = `Humidity: ${humidity}%`;
   let wind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = `Wind: ${wind} km/h`;
+  windSpeed.innerHTML = `Wind: ${wind} Km/h`;
   //Based off humidity level anything above 50% can cause the air
   //quality to be bad for sensitive groups
   let airQuality = document.querySelector("#air-quality");
