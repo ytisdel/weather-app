@@ -37,3 +37,22 @@ img {
   margin: 0 auto;
   text-align: center;
 }
+
+.weather-temperature img {
+  margin-right: 5 px;
+  height: 60px;
+  width: 60px;
+  margin-top: -30px;
+}
+
+.weather-temperature .temperature {
+  font-size: 60px;
+  line-height: 64px;
+  font-weight: 400;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -25px;
+}
