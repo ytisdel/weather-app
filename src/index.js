@@ -21,6 +21,11 @@ h5.innerHTML = `${day} ${hour}:${minutes}`;
 function showCurrentTemperature(response) {
   console.log(response.data);
   document.querySelector("#current-city").innerHTML = response.data.name;
+  let iconElement = document.querySelector("#icon-main");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   let temperature = Math.round(response.data.main.temp);
   let temperatureMain = document.querySelector("#temperature");
   temperatureMain.innerHTML = `${temperature}`;
