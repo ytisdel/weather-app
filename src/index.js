@@ -22,21 +22,24 @@ function showCurrentTemperature(response) {
   console.log(response.data);
   document.querySelector("#current-city").innerHTML = response.data.name;
   let iconElement = document.querySelector("#icon-main");
+  let temperature = Math.round(response.data.main.temp);
+  let temperatureMain = document.querySelector("#temperature");
+  let weatherCond = document.querySelector("#weather-condition");
+  let humidity = Math.round(response.data.main.humidity);
+  let humidityMain = document.querySelector("#humidity-main");
+  let wind = Math.round(response.data.wind.speed);
+  let windSpeed = document.querySelector("#wind-speed");
+
+  celsiusTemperature = response.data.main.temp;
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  let temperature = Math.round(response.data.main.temp);
-  let temperatureMain = document.querySelector("#temperature");
   temperatureMain.innerHTML = `${temperature}`;
-  let weatherCond = document.querySelector("#weather-condition");
-  weatherCond.innerHTML = response.data.weather[0].description;
-  let humidity = Math.round(response.data.main.humidity);
-  let humidityMain = document.querySelector("#humidity-main");
-  humidityMain.innerHTML = `Humidity: ${humidity}%`;
-  let wind = Math.round(response.data.wind.speed);
-  let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `Wind: ${wind} Km/h`;
+  weatherCond.innerHTML = response.data.weather[0].description;
+  humidityMain.innerHTML = `Humidity: ${humidity}%`;
   //Based off humidity level anything above 50% can cause the air
   //quality to be bad for sensitive groups
   let airQuality = document.querySelector("#air-quality");
@@ -77,10 +80,21 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let currentButton = document.querySelector("#current");
 currentButton.addEventListener("click", getCurrentLocation);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 searchCity("Phoenix");
