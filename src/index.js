@@ -50,7 +50,7 @@ function displayForecast(response) {
                 <div class="weather-forecast-temperatures">
                   <span class="weather-forecast-temperature-max"> ${Math.round(
                     forecastDay.temp.max
-                  )}° </span>
+                  )} </span>
                   <span class="weather-forecast-temperature-min"> ${Math.round(
                     forecastDay.temp.min
                   )}° </span>
@@ -88,7 +88,7 @@ function showCurrentTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   temperatureMain.innerHTML = `${temperature}`;
-  windSpeed.innerHTML = `Wind: ${wind} Km/h`;
+  windSpeed.innerHTML = `Wind: ${wind} km/h`;
   weatherCond.innerHTML = response.data.weather[0].description;
   humidityMain.innerHTML = `Humidity: ${humidity}%`;
   //Based off humidity level anything above 50% can cause the air

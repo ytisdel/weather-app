@@ -1,6 +1,7 @@
 .container .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
+  background: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
 }
 
 .container .weather-app-contain {
@@ -8,8 +9,18 @@
   border: 1px solid black;
   border-radius: 10px;
 }
+
 .h4 {
   text-align: center;
+}
+
+.btn {
+  background: #fdf3f3;
+  color: black;
+}
+
+.card-body {
+  background: #fdf3f3;
 }
 
 .col .current-city {
